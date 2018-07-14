@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <!-- https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=linux#how-the-secret-manager-tool-works -->
+    <UserSecretsId>01c0f1f3-abc7-4c3a-ae98-984dd1b9b245</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
