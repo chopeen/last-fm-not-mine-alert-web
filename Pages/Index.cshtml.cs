@@ -30,10 +30,6 @@ namespace last_fm_not_mine_alert_web.Pages
                 return Page();
             }
 
-            // for debugging only
-            Console.WriteLine("Form value:\t" + this.ArtistName);
-            Console.WriteLine("Secrets:\t" + this._configuration["NotMyArtistsApiUrl"]);
-
             using (HttpClient client = new HttpClient())
             {
                 string apiUrl = this._configuration["NotMyArtistsApiUrl"];
