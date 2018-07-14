@@ -29,7 +29,7 @@ namespace last_fm_not_mine_alert_web.Pages
             }
 
             // for debugging only
-            Console.WriteLine(this.ArtistName);
+            Console.WriteLine("Form value:\t" + this.ArtistName);
             Console.WriteLine("Secrets:\t" + this._configuration["NotMyArtistsApiUrl"]);
             
             return RedirectToPage("/Index");
