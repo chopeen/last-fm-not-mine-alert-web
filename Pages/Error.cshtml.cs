@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace minimal_razor.Pages
+namespace last_fm_not_mine_alert_web.Pages
 {
     public class ErrorModel : PageModel
     {
