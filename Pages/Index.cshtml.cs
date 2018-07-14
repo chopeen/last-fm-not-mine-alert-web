@@ -9,11 +9,5 @@ namespace last_fm_not_mine_alert_web.Pages
 {
     public class IndexModel : PageModel
     {
-        public string Message { get; set; }
-
-        public void OnGet()
-        {
-            Message = "Template description";
-        }
     }
 }
