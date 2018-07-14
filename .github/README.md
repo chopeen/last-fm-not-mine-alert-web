@@ -1,5 +1,7 @@
 # Basic Web UI to manage configuration for `last-fm-not-mine-alert-func`
 
+## Architecture
+
     +-----------------------+
     |                       |
     | Web UI (this repo)    |
@@ -26,8 +28,20 @@
                                     |                          |
                                     +--------------------------+
 
-The main repository is [last-fm-not-mine-alert-func](https://github.com/chopeen/last-fm-not-mine-alert-func)
-and it contains two Azure functions:
+## Related projects
+
+The core of the solution is the repository [last-fm-not-mine-alert-func](https://github.com/chopeen/last-fm-not-mine-alert-func).
+It contains two Azure functions:
 
  - `send-alert` (timer trigger) - fetching information from Last.fm API and sending email alerts
  - `not-my-artists` (HTTP trigger) - API to access the configuration stored in Azure Storage tables
+
+## TODO:
+
+1. Find some CSS styling
+1. Add robots.txt to prevent indexing
+1. Validation for for entered values - letters, digits, commas, hyphens, what else?
+1. Authorization?
+1. Helper method @Html.Button
+ - https://books.google.pl/books?id=gEFPDwAAQBAJ&lpg=PA221&ots=So43eOzUpa&dq=IHtmlHelper%20button&pg=PA221#v=onepage&q&f=false
+ - https://github.com/HtmlTags/htmltags/blob/master/src/HtmlTags.AspNetCore.TestSite/HtmlHelperExtensions.cs
