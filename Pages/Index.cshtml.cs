@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 
 namespace last_fm_not_mine_alert_web.Pages
 {
     public class IndexModel : PageModel
     {
+        // injecting IConfiguration into the model
+        private readonly IConfiguration _configuration;
+        public IndexModel(IConfiguration configuration)
+        {
+            this._configuration = configuration;
+        }
+
         [BindProperty, Required, StringLength(50)]
         public string ArtistName { get; set; }
 
@@ -22,7 +30,8 @@ namespace last_fm_not_mine_alert_web.Pages
 
             // for debugging only
             Console.WriteLine(this.ArtistName);
-
+            Console.WriteLine("Secrets:\t" + this._configuration["NotMyArtistsApiUrl"]);
+            
             return RedirectToPage("/Index");
         }
     }
