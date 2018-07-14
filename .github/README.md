@@ -33,10 +33,16 @@
 The core of the solution is the repository [last-fm-not-mine-alert-func](https://github.com/chopeen/last-fm-not-mine-alert-func).
 It contains two Azure functions:
 
- - `send-alert` (timer trigger) - fetching information from Last.fm API and sending email alerts
- - `not-my-artists` (HTTP trigger) - API to access the configuration stored in Azure Storage tables
+- `send-alert` (timer trigger) - fetching information from Last.fm API and sending email alerts
+- `not-my-artists` (HTTP trigger) - API to access the configuration stored in Azure Storage tables
 
-## TODO:
+## Links
+
+- [Introduction to Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-2.1&tabs=visual-studio-codex)
+- [Azure Key Vault configuration provider in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
+- [Safe storage of app secrets in development in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=linux)
+
+## TODO
 
 1. Find some CSS styling
 1. Add robots.txt to prevent indexing
