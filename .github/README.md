@@ -44,7 +44,7 @@ It contains two Azure functions:
 
 ## TODO
 
-1. (!) Modify the API (and then `PostAsJsonAsync`) so that the key is sent as a query parameter (or even better - in a header), but artist name in the request body
+1. (!) Modify the API (and then `PostAsJsonAsync`) so that the key is sent as a query parameter (or even better - `x-functions-key` HTTP header), but artist name in the request body
 1. (!) Show a confirmation that a new entry was added successfully
 1. Find some CSS styling
 1. Add robots.txt to prevent indexing
