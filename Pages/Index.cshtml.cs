@@ -39,7 +39,8 @@ namespace last_fm_not_mine_alert_web.Pages
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = await client.PostAsJsonAsync($"api/not-my-artists?code={apiKey}&name={this.ArtistName}", "{}");
+                string encodedArtistName = Uri.EscapeDataString(this.ArtistName);
+                HttpResponseMessage response = await client.PostAsJsonAsync($"api/not-my-artists?code={apiKey}&name={encodedArtistName}", "{}");
                 response.EnsureSuccessStatusCode();
 
                 // TODO: How to use `ArtistEntity` here without code duplication to deserialize the JSON into an entity automatically?
