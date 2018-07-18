@@ -30,6 +30,7 @@ namespace last_fm_not_mine_alert_web.Pages
                 return Page();
             }
 
+            /* 
             using (HttpClient client = new HttpClient())
             {
                 string apiUrl = this._configuration["NotMyArtistsApiUrl"];
@@ -46,8 +47,9 @@ namespace last_fm_not_mine_alert_web.Pages
                 // TODO: How to use `ArtistEntity` here without code duplication to deserialize the JSON into an entity automatically?
                 object addedArtist = await response.Content.ReadAsAsync<object>();
             }
+             */
             
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index", "not-yet-implemented");
         }
     }
 }
