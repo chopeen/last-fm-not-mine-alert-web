@@ -47,7 +47,7 @@ It contains two Azure functions:
 1. (!) Modify the API (and then `PostAsJsonAsync`) so that the key is sent as a query parameter (or even better - `x-functions-key` HTTP header), but artist name in the request body
 1. (!) Show a confirmation that a new entry was added successfully
 1. Find some CSS styling
-1. Add robots.txt to prevent indexing
+1. ~~Add robots.txt to prevent indexing~~
 1. Validation for for entered values - letters, digits, commas, hyphens, what else?
 1. Restore jQuery to use the out-of-the-box validation https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model#validation-error-ui-in-aspnet-mvc
 1. Some rudimentary authorization or CAPTCHA?
