@@ -28,6 +28,14 @@ namespace last_fm_not_mine_alert_web.Pages
         [BindProperty, Required, StringLength(50)]
         public string ArtistName { get; set; }
 
+        public void OnGet()
+        {
+            System.Security.Principal.IIdentity currentIdentity = ClaimsPrincipal.Current.Identity;
+            this._logger.LogInformation($"Logged user AuthenticationType: {currentIdentity.AuthenticationType}");
+            this._logger.LogInformation($"Logged user IsAuthenticated: {currentIdentity.IsAuthenticated}");
+            this._logger.LogInformation($"Logged user Name: {currentIdentity.Name}");
+        }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
