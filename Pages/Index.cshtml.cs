@@ -4,20 +4,25 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace last_fm_not_mine_alert_web.Pages
 {
     public class IndexModel : PageModel
     {
-        // injecting IConfiguration into the model
+        // injecting the configuration and logger into the model
         private readonly IConfiguration _configuration;
-        public IndexModel(IConfiguration configuration)
+        private readonly ILogger _logger;
+
+        public IndexModel(IConfiguration configuration, ILogger logger)
         {
             this._configuration = configuration;
+            this._logger = logger;
         }
 
         [BindProperty, Required, StringLength(50)]
