@@ -50,8 +50,8 @@ It contains two Azure functions:
 1. ~~Add robots.txt to prevent indexing~~
 1. Validation for for entered values - letters, digits, commas, hyphens, what else?
 1. Restore jQuery to use the out-of-the-box validation https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model#validation-error-ui-in-aspnet-mvc
-1. Some rudimentary authorization or CAPTCHA?
-    - Check "Authentication / Authrization" in application configuration
+1. ~~Some rudimentary authorization or CAPTCHA?~~
+    - ~~Check "Authentication / Authrization" in application configuration~~
 1. Helper method @Html.Button
     - https://books.google.pl/books?id=gEFPDwAAQBAJ&lpg=PA221&ots=So43eOzUpa&dq=IHtmlHelper%20button&pg=PA221#v=onepage&q&f=false
     - https://github.com/HtmlTags/htmltags/blob/master/src/HtmlTags.AspNetCore.TestSite/HtmlHelperExtensions.cs
