@@ -65,7 +65,7 @@ namespace last_fm_not_mine_alert_web.Pages
                 object addedArtist = await response.Content.ReadAsAsync<object>();
             }
             
-            return RedirectToPage("/Index", "not-yet-implemented");
+            return RedirectToPage("/Index");
         }
     }
 }
