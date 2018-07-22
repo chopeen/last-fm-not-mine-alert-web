@@ -17,9 +17,9 @@ namespace last_fm_not_mine_alert_web.Pages
     {
         // injecting the configuration and logger into the model
         private readonly IConfiguration _configuration;
-        private readonly ILogger _logger;
+        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(IConfiguration configuration, ILogger logger)
+        public IndexModel(IConfiguration configuration, ILogger<IndexModel> logger)
         {
             this._configuration = configuration;
             this._logger = logger;
