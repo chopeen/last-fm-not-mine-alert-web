@@ -27,18 +27,9 @@ namespace last_fm_not_mine_alert_web.Pages
         [BindProperty, Required, StringLength(50)]
         public string ArtistName { get; set; }
 
-        // TODO: Can this be implemented with the Authorize attribute? Custom authorization?
-        //
-        // TODO: This will work for the initial page load and fail when the token is not passed in `RedirectToPage` below.
-        //       Find a more robust solution - set a cookie and check "token or cookie"?
         public void OnGet()
         {
-            string authToken = this.Request.Query["code"];
-
-            if (string.IsNullOrEmpty(authToken) || authToken != this._configuration["WebsiteAuthToken"])
-            {
-                throw new System.Security.Authentication.InvalidCredentialException("No or wrong authentication token specified.");
-            }
+            authenticateOrFail();
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -66,6 +57,21 @@ namespace last_fm_not_mine_alert_web.Pages
             }
             
             return RedirectToPage("/Index");
+        }
+
+        // TODO: Can this be implemented with the Authorize attribute or ModelState? Read more about auth and find
+        //       a standard way.
+        //
+        // TODO: This will work for the initial page load and fail when the token is not passed in `RedirectToPage` below.
+        //       Find a more robust solution - set a cookie and check "token or cookie"?
+        private void authenticateOrFail()
+        {
+            string authToken = this.Request.Query["code"];
+
+            if (string.IsNullOrEmpty(authToken) || authToken != this._configuration["WebsiteAuthToken"])
+            {
+                throw new System.Security.Authentication.InvalidCredentialException("Wrong authentication token specified or none at all.");
+            }
         }
     }
 }
