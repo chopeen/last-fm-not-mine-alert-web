@@ -44,7 +44,7 @@ It contains two Azure functions:
 
 ## TODO
 
-1. (!) Modify the API (and then `PostAsJsonAsync`) so that ~~the key is sent as a query parameter (or even better - `x-functions-key` HTTP header), but~~ artist name in the request body
+1. ~~(!) Modify the API (and then `PostAsJsonAsync`) so that the key is sent as a query parameter (or even better - `x-functions-key` HTTP header), but artist name in the request body~~
 1. (!) Show a confirmation that a new entry was added successfully (by redirecting to a Success page)
 1. Restore the full-blown authentication **and** implement authorization
     - *By default, App Service provides authentication but does not restrict authorized access to your site content and APIs. You must authorize users in your app code.*

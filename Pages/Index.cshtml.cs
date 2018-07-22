@@ -51,8 +51,9 @@ namespace last_fm_not_mine_alert_web.Pages
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                string encodedArtistName = Uri.EscapeDataString(this.ArtistName);
-                HttpResponseMessage response = await client.PostAsJsonAsync($"api/not-my-artists?name={encodedArtistName}", "{}");
+                // TODO: Is this safe? Should be user input be sanitized in any way before sending via POST?
+                var newArtist = new { name = this.ArtistName };  // anononymous type
+                HttpResponseMessage response = await client.PostAsJsonAsync($"api/not-my-artists", newArtist);
                 response.EnsureSuccessStatusCode();
 
                 // TODO: How to use `ArtistEntity` here without code duplication to deserialize the JSON into an entity automatically?
