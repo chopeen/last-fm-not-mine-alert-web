@@ -71,7 +71,7 @@ namespace last_fm_not_mine_alert_web.Pages
             string queryToken = this.Request.Query[authTokenKey];
             string cookieToken = this.Request.Cookies[authTokenKey];
 
-            if (this.isAuthTokenOK(expectedToken, queryToken))
+            if (expectedToken.IsNotNullAndEquals(queryToken))
             {
                 this.Response.Cookies.Append(authTokenKey, expectedToken, new CookieOptions()
                 {
@@ -82,22 +82,13 @@ namespace last_fm_not_mine_alert_web.Pages
                 
                 return;
             }
-            else if (this.isAuthTokenOK(expectedToken, cookieToken))
+            else if (expectedToken.IsNotNullAndEquals(cookieToken))
             {
                 return;
             }
 
             // fail unless authentication was successful
             throw new System.Security.Authentication.InvalidCredentialException("Wrong authentication token specified or none at all.");
-        }
-
-        private bool isAuthTokenOK(string exptected, string given)
-        {
-            return (
-                !string.IsNullOrEmpty(exptected) &&
-                !string.IsNullOrEmpty(given) &&
-                exptected == given
-            );
         }
     }
 }
