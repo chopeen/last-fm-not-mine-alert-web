@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
@@ -61,17 +63,41 @@ namespace last_fm_not_mine_alert_web.Pages
 
         // TODO: Can this be implemented with the Authorize attribute or ModelState? Read more about auth and find
         //       a standard way.
-        //
-        // TODO: This will work for the initial page load and fail when the token is not passed in `RedirectToPage` below.
-        //       Find a more robust solution - set a cookie and check "token or cookie"?
         private void authenticateOrFail()
         {
-            string authToken = this.Request.Query["code"];
+            string authTokenKey = "code";
 
-            if (string.IsNullOrEmpty(authToken) || authToken != this._configuration["WebsiteAuthToken"])
+            string expectedToken = this._configuration["WebsiteAuthToken"];
+            string queryToken = this.Request.Query[authTokenKey];
+            string cookieToken = this.Request.Cookies[authTokenKey];
+
+            if (this.isAuthTokenOK(expectedToken, queryToken))
             {
-                throw new System.Security.Authentication.InvalidCredentialException("Wrong authentication token specified or none at all.");
+                this.Response.Cookies.Append(authTokenKey, expectedToken, new CookieOptions()
+                {
+                        HttpOnly = true,
+                        Expires = DateTime.Now.AddDays(3),
+                        SameSite = SameSiteMode.Strict
+                });
+                
+                return;
             }
+            else if (this.isAuthTokenOK(expectedToken, cookieToken))
+            {
+                return;
+            }
+
+            // fail unless authentication was successful
+            throw new System.Security.Authentication.InvalidCredentialException("Wrong authentication token specified or none at all.");
+        }
+
+        private bool isAuthTokenOK(string exptected, string given)
+        {
+            return (
+                !string.IsNullOrEmpty(exptected) &&
+                !string.IsNullOrEmpty(given) &&
+                exptected == given
+            );
         }
     }
 }
