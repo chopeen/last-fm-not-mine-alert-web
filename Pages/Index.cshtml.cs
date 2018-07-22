@@ -34,6 +34,8 @@ namespace last_fm_not_mine_alert_web.Pages
             authenticateOrFail();
         }
 
+        // TODO: Should this API call be placed in a Controller class? Then PostAsJsonAsync<IndexModel> should be possible,
+        //       without the anononymous type.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -56,8 +58,9 @@ namespace last_fm_not_mine_alert_web.Pages
                 HttpResponseMessage response = await client.PostAsJsonAsync($"api/not-my-artists", newArtist);
                 response.EnsureSuccessStatusCode();
 
-                // TODO: How to use `ArtistEntity` here without code duplication to deserialize the JSON into an entity automatically?
-                object addedArtist = await response.Content.ReadAsAsync<object>();
+                // TODO: The confirmation page could display the response (e.g. new artists's ID).
+                //       How to use `ArtistEntity` here, without code duplication to deserialize the JSON into an entity automatically?
+                // object addedArtist = await response.Content.ReadAsAsync<object>();
             }
             
             return RedirectToPage("/Index");
