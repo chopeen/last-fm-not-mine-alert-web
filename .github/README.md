@@ -43,16 +43,16 @@ It contains two Azure functions:
 
 ## TODO
 
-1. (!) Show a confirmation that a new entry was added successfully (by redirecting to a Success page)
-1. Restore the full-blown authentication **and** implement authorization
+1. (!!!) Restore jQuery to use the out-of-the-box validation https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model#validation-error-ui-in-aspnet-mvc
+1. (!!!) Validation for for entered values - letters, digits, commas, hyphens, what else?
+1. (!!) Read about authentication and authorization in .NET Core - what will be easy to implement? Some standard implementation to replace the current custom one.
     - *By default, App Service provides authentication but does not restrict authorized access to your site content and APIs. You must authorize users in your app code.*
     - https://docs.microsoft.com/gl-es/azure/app-service/app-service-authentication-overview#user-claims
     - https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/samples/2.x/AuthorizationSample 
-1. Add a page to list existing artists
+1. (!) Show a confirmation that a new entry was added successfully (Success page or jQuery notification?)
+1. (!) Add a page to list existing artists (new page or Index?)
 1. Add ILogger and ICont to the minimal template
 1. Find some CSS styling
-1. Validation for for entered values - letters, digits, commas, hyphens, what else?
-1. Restore jQuery to use the out-of-the-box validation https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model#validation-error-ui-in-aspnet-mvc
 1. Helper method @Html.Button
     - https://books.google.pl/books?id=gEFPDwAAQBAJ&lpg=PA221&ots=So43eOzUpa&dq=IHtmlHelper%20button&pg=PA221#v=onepage&q&f=false
     - https://github.com/HtmlTags/htmltags/blob/master/src/HtmlTags.AspNetCore.TestSite/HtmlHelperExtensions.cs
