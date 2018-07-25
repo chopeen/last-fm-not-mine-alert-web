@@ -26,7 +26,9 @@ namespace last_fm_not_mine_alert_web.Pages
             this._logger = logger;
         }
 
-        [BindProperty, Required, StringLength(50)]
+        [BindProperty]
+        [Required]
+        [StringLength(50)]
         public string ArtistName { get; set; }
 
         public void OnGet()
