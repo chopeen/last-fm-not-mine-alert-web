@@ -52,7 +52,9 @@ It contains two Azure functions:
 1. (!) Show a confirmation that a new entry was added successfully (Success page or jQuery notification?)
 1. (!) Add a page to list existing artists (new page or Index?)
 1. Add ILogger and ICont to the minimal template
-1. Find some CSS styling
+1. Find some CSS styling - consider restoring Bootstrap and use
+   [RazorPagesMovie](https://github.com/dotnet-presentations/aspnetcore-for-beginners/blob/master/Final_Project/RazorPagesMovie/Pages/Movies/Create.cshtml)
+   for inspiration
 1. Helper method @Html.Button
     - https://books.google.pl/books?id=gEFPDwAAQBAJ&lpg=PA221&ots=So43eOzUpa&dq=IHtmlHelper%20button&pg=PA221#v=onepage&q&f=false
     - https://github.com/HtmlTags/htmltags/blob/master/src/HtmlTags.AspNetCore.TestSite/HtmlHelperExtensions.cs
