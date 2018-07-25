@@ -10,6 +10,7 @@
     {
         @Html.Label("Enter artist name:")
         @Html.TextBoxFor(model => model.ArtistName)
+        @Html.ValidationMessageFor(model => model.ArtistName)
         <input type="submit" value="Add new artist" />
     }
 </p>
