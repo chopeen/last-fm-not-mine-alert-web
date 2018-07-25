@@ -9,7 +9,7 @@
     @using(Html.BeginForm())
     {
         @Html.Label("Enter artist name:")
-        @Html.TextBoxFor(m => m.ArtistName)
+        @Html.TextBoxFor(model => model.ArtistName)
         <input type="submit" value="Add new artist" />
     }
 </p>
