@@ -28,7 +28,7 @@ namespace last_fm_not_mine_alert_web.Pages
 
         [BindProperty]
         [Required]
-        [StringLength(50)]
+        [StringLength(50, MinimumLength = 3)]
         public string ArtistName { get; set; }
 
         public void OnGet()
