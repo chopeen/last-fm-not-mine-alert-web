@@ -5,12 +5,13 @@
 }
 <h2>@ViewData["Title"]</h2>
 
-<p>
-    @using(Html.BeginForm())
-    {
-        @Html.Label("Enter artist name:")
-        @Html.TextBoxFor(model => model.ArtistName)
-        @Html.ValidationMessageFor(model => model.ArtistName)
-        <input type="submit" value="Add new artist" />
-    }
-</p>
+<form method="post">
+    <div class="form-group">
+        @Html.LabelFor(model => model.ArtistName, "Enter artist name:", new { @class = "control-label"})
+
+        @Html.TextBoxFor(model => model.ArtistName, new { @class = "form-control", @placeholder = "Pink Floyd"})
+
+        @Html.ValidationMessageFor(model => model.ArtistName, null, new { @class = "text-danger"})
+    </div>
+    <input type="submit" value="Add new artist" class="btn btn-default" />
+</form>
