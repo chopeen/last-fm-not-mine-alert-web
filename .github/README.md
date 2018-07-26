@@ -43,8 +43,7 @@ It contains two Azure functions:
 
 ## TODO
 
-1. (!!!) Restore jQuery to use the out-of-the-box validation https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model#validation-error-ui-in-aspnet-mvc
-1. (!!!) Validation for for entered values - letters, digits, commas, hyphens, what else?
+1. (!!!) Regex validation for the input value (letters, digits, commas, hyphens, what else?)
 1. (!!) Read about authentication and authorization in .NET Core - what will be easy to implement? Some standard implementation to replace the current custom one.
     - *By default, App Service provides authentication but does not restrict authorized access to your site content and APIs. You must authorize users in your app code.*
     - https://docs.microsoft.com/gl-es/azure/app-service/app-service-authentication-overview#user-claims
