@@ -30,6 +30,7 @@ namespace last_fm_not_mine_alert_web.Pages
         [Required]
         [MinLength(3)]
         [MaxLength(50)]
+        [RegularExpression(ARTIST_NAME_VALIDATION_REGEX)]
         public string ArtistName { get; set; }
 
         public void OnGet()

@@ -36,6 +36,15 @@ It contains two Azure functions:
 - `send-alert` (timer trigger) - fetching information from Last.fm API and sending email alerts
 - `not-my-artists` (HTTP trigger) - API to access the configuration stored in Azure Storage tables
 
+## Non-ASCII characters in regular expressions
+
+.NET Core supports the names of Unicode blocks in regular expressions, so there's no need to specify
+every diacritic character explicitly.
+
+- [Unicode block names for use with the `\p` token](https://www.w3.org/TR/xsd-unicode-blocknames/)
+- [Unicode regular expressions](https://www.regular-expressions.info/unicode.html)
+- ["Latin-1 Supplement" Unicode block](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block))
+
 ## Links
 
 - [Introduction to Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-2.1&tabs=visual-studio-codex)
@@ -45,7 +54,7 @@ It contains two Azure functions:
 
 ## TODO
 
-1. (!!!) Regex validation for the input value (letters, digits, commas, hyphens, what else?)
+1. ~~(!!!) Regex validation for the input value (letters, digits, commas, hyphens, what else?)~~
 1. (!!) Read about authentication and authorization in .NET Core - what will be easy to implement? Some standard implementation to replace the current custom one.
     - *By default, App Service provides authentication but does not restrict authorized access to your site content and APIs. You must authorize users in your app code.*
     - https://docs.microsoft.com/gl-es/azure/app-service/app-service-authentication-overview#user-claims
