@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace last_fm_not_mine_alert_web.Pages
 {
-    public class IndexModel : PageModel
+    public partial class IndexModel : PageModel
     {
         // injecting the configuration and logger into the model
         private readonly IConfiguration _configuration;
