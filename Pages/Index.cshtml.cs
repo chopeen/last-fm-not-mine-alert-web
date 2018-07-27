@@ -14,7 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace last_fm_not_mine_alert_web.Pages
 {
-    public partial class IndexModel : PageModel
+    public class IndexModel : PageModel
     {
         // injecting the configuration and logger into the model
         private readonly IConfiguration _configuration;
@@ -30,7 +30,7 @@ namespace last_fm_not_mine_alert_web.Pages
         [Required]
         [MinLength(3)]
         [MaxLength(50)]
-        [RegularExpression(ARTIST_NAME_VALIDATION_REGEX)]
+        [RegularExpression(last_fm_not_mine_alert_web.Consts.ARTIST_NAME_VALIDATION_REGEX)]
         public string ArtistName { get; set; }
 
         public void OnGet()
