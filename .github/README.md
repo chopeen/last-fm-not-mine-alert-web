@@ -40,6 +40,8 @@ It contains two Azure functions:
 
 - [Introduction to Razor Pages in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/razor-pages/?view=aspnetcore-2.1&tabs=visual-studio-codex)
 - [Safe storage of app secrets in development in ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=linux)
+- [Example Code - Opinionated ContosoUniversity on ASP.NET Core 2.0's Razor Pages](https://www.hanselman.com/blog/ExampleCodeOpinionatedContosoUniversityOnASPNETCore20sRazorPages.aspx)
+  (lots if useful links in the article)
 
 ## TODO
 
