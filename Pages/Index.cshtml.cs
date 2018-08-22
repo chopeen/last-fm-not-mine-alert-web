@@ -38,8 +38,8 @@ namespace last_fm_not_mine_alert_web.Pages
             authenticateOrFail();
         }
 
-        // TODO: Should this API call be placed in a Controller class? Then PostAsJsonAsync<IndexModel> should be possible,
-        //       without the anononymous type.
+        // TODO: Should this API call be placed in a Controller class? Is there such a concept in Razor?
+        //       Then PostAsJsonAsync<IndexModel> should be possible, without the anononymous type.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
