@@ -61,7 +61,6 @@ every diacritic character explicitly.
 1. (!) Show a confirmation that a new entry was added successfully (Success page or jQuery notification?)
 1. (!) Add a page to list existing artists (new page or Index?)
 1. Place the label and text box next to each other; make the latter smaller
-1. Add ILogger and ICont to the minimal template
 1. Performance of `func`
     - example call
         - Total:   2500ms
